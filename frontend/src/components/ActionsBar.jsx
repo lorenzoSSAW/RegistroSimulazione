@@ -1,0 +1,1 @@
+import React from 'react';export default function ActionsBar({ backend, classId }){ return (<div className='card'><h3>Azioni</h3><div style={{marginTop:8}}><button className='btn' onClick={()=>alert('Firma registrata')}>Firma ora</button></div></div>);}

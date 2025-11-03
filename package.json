@@ -1,0 +1,9 @@
+{
+  "name": "RegistroSimulazione_full",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node backend/server.js",
+    "seed": "node backend/seed_trigger.js"
+  }
+}
