@@ -124,9 +124,19 @@ app.post('/api/seed', async (req,res)=>{
   }catch(e){ console.error(e); res.status(500).json({ error:'db' }); }
 });
 
-app.use(express.static(path.join(__dirname, '..', 'frontend', 'dist')));
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
+// Importa moduli all'inizio del file se non ci sono
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+// Aggiungi queste due righe subito sopra "app.listen(...)"
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Servire il frontend correttamente
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
+
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
 });
 
 
