@@ -1,14 +1,21 @@
 {
   "name": "RegistroSimulazione_full",
   "version": "1.0.0",
+  "description": "Registro elettronico scolastico completo - versione Railway/Render ready",
   "main": "backend/server.js",
   "scripts": {
-    "start": "node backend/server.js"
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js"
   },
   "dependencies": {
-    "express": "^4.18.2",
-    "cors": "^2.8.5",
-    "pg": "^8.11.1",
-    "socket.io": "^4.7.2"
-  }
+    "express": "^4.19.2",
+    "socket.io": "^4.7.2",
+    "pg": "^8.11.3",
+    "cors": "^2.8.5"
+  },
+  "engines": {
+    "node": "20.x"
+  },
+  "author": "lorenzoSSAW",
+  "license": "MIT"
 }
