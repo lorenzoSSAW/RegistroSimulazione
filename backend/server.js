@@ -132,5 +132,5 @@ app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
 });
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 8000;
 server.listen(PORT, () => console.log('Server listening on', PORT));
