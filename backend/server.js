@@ -126,7 +126,6 @@ app.post('/api/seed', async (req,res)=>{
 });
 
 // Serve frontend
-const __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
 app.get('/*', function (req, res) {
