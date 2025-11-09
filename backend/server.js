@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false });
+
 
 async function initDB(){
   await pool.query(`
@@ -126,6 +126,7 @@ app.post('/api/seed', async (req,res)=>{
 });
 
 // Serve frontend
+const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
 app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
 app.get('/*', function (req, res) {
